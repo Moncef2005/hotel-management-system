@@ -3,7 +3,7 @@ import sqlite3
 # Étape 1 : Connexion à la base (création si elle n'existe pas)
 conn = sqlite3.connect('hotel.db')
 cursor = conn.cursor()
-print("✅ Étape 1 : Connexion ouverte ou fichier créé.")
+print(" Étape 1 : Connexion ouverte ou fichier créé.")
 
 # Étape 2 : Supprimer les tables si elles existent déjà (pour rejouer le script)
 cursor.executescript("""
@@ -15,7 +15,7 @@ DROP TABLE IF EXISTS Chambre;
 DROP TABLE IF EXISTS Reservation;
 DROP TABLE IF EXISTS Evaluation;
 """)
-print("✅ Étape 2 : Tables précédentes supprimées (si présentes).")
+print(" Étape 2 : Tables précédentes supprimées (si présentes).")
 
 # Étape 3 : Créer les tables
 cursor.executescript("""
@@ -76,7 +76,7 @@ CREATE TABLE Evaluation (
     FOREIGN KEY(client_id) REFERENCES Client(id)
 );
 """)
-print("✅ Étape 3 : Tables créées.")
+print(" Étape 3 : Tables créées.")
 
 # Étape 4 : Insérer les données
 cursor.executescript("""
@@ -129,11 +129,11 @@ INSERT INTO Evaluation VALUES (3, '2025-08-10', 3, 'Séjour correct mais bruyant
 INSERT INTO Evaluation VALUES (4, '2025-09-05', 5, 'Service impeccable, je recommande.', 4);
 INSERT INTO Evaluation VALUES (5, '2025-09-20', 4, 'Très bon petit-déjeuner, hôtel bien situé.', 5);
 """)
-print("✅ Étape 4 : Données insérées.")
+print(" Étape 4 : Données insérées.")
 
 # Étape 5 : Sauvegarder les changements
 conn.commit()
-print("✅ Étape 5 : Changements sauvegardés.")
+print(" Étape 5 : Changements sauvegardés.")
 
 # Étape 6 : Exécuter des requêtes simples
 print("\n--- Liste des clients ---")
@@ -162,5 +162,5 @@ for row in cursor.fetchall():
 
 # Étape 7 : Fermer la connexion
 conn.close()
-print("\n✅ Étape 7 : Connexion fermée. Fichier 'hotel.db' prêt.")
+print("\n Étape 7 : Connexion fermée. Fichier 'hotel.db' prêt.")
 
