@@ -38,7 +38,7 @@ Ce projet a été réalisé dans un cadre pédagogique afin de mettre en pratiqu
 
 ## 🏗 Architecture du Projet
 ```
-Python_BD/
+hotel-management-system/
 │
 ├── app.py # Interface Streamlit
 ├── create_hotel_db.py # Script de création et initialisation BDD
@@ -76,8 +76,8 @@ Python_BD/
 ### 1️ Cloner le dépôt
 
 ```bash
-git clone https://github.com/Moncef2005/Python_BD.git
-cd Python_BD
+git clone https://github.com/Moncef2005/hotel-management-system.git
+cd hotel-management-system
 
 ```
 ### 2 Initialiser la base de données
